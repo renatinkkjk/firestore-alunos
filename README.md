@@ -282,6 +282,21 @@ A atividade pede prints do CRUD e das consultas. Sugestão de 8 capturas
 Dica: no console do Firebase, a aba **Firestore Database > Dados** mostra a coleção
 `alunos` e serve como print extra comprovando que os dados estão no banco.
 
+### Prints já gerados (execuções reais neste projeto)
+
+Essas imagens foram geradas a partir de execuções reais do programa contra o Firestore
+do projeto (8 alunos fictícios na coleção `alunos`):
+
+| | |
+| --- | --- |
+| ![Menu principal](docs/prints/01-menu-principal.png) | ![CREATE](docs/prints/02-create-cadastrar.png) |
+| ![READ - listar](docs/prints/03-read-listar.png) | ![READ - por ID](docs/prints/04-read-por-id.png) |
+| ![UPDATE](docs/prints/05-update-atualizar.png) | ![DELETE](docs/prints/06-delete-excluir.png) |
+| ![Consulta por turma](docs/prints/07-consulta-turma.png) | ![Consulta por data](docs/prints/08-consulta-data.png) |
+
+Se quiser substituir por capturas da sua própria tela, é só rodar `npm start`
+e apertar `Print Screen` / `Win + Shift + S` em cada passo.
+
 ---
 
 ## Problemas comuns
