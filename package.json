@@ -1,0 +1,24 @@
+{
+  "name": "firestore-alunos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CRUD de alunos no Firebase Cloud Firestore usando o Firebase Admin SDK (menu no terminal).",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "seed": "node src/scripts/seed.js"
+  },
+  "keywords": [
+    "firebase",
+    "firestore",
+    "crud",
+    "nodejs"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0"
+  }
+}

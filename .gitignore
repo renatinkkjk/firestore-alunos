@@ -1,0 +1,22 @@
+# Dependências
+node_modules/
+
+# Credenciais do Firebase — NUNCA publicar
+serviceAccountKey.json
+service-account*.json
+*.private-key.json
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Logs e arquivos do sistema
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
