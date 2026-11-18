@@ -282,10 +282,10 @@ A atividade pede prints do CRUD e das consultas. Sugestão de 8 capturas
 Dica: no console do Firebase, a aba **Firestore Database > Dados** mostra a coleção
 `alunos` e serve como print extra comprovando que os dados estão no banco.
 
-### Prints já gerados (execuções reais neste projeto)
+### Prints já gerados (capturas do terminal rodando)
 
-Essas imagens foram geradas a partir de execuções reais do programa contra o Firestore
-do projeto (8 alunos fictícios na coleção `alunos`):
+Essas imagens são capturas do programa rodando de verdade no Windows PowerShell,
+conectado ao Firestore do projeto (8 alunos fictícios na coleção `alunos`):
 
 | | |
 | --- | --- |

@@ -19,6 +19,6 @@ main().catch((erro) => {
     process.exit(0);
   }
 
-  console.error('\n✖ Erro inesperado:', erro.message);
+  console.error('\nERRO INESPERADO:', erro.message);
   process.exitCode = 1;
 });

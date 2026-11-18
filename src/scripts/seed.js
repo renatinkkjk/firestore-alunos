@@ -14,9 +14,9 @@ async function main() {
     const inseridos = await popularComDadosFicticios((aluno) => {
       console.log(`  + ${aluno.nome} (${aluno.turma}) -> ${aluno.id}`);
     });
-    console.log(`\n✔ ${inseridos.length} aluno(s) inserido(s) com sucesso.`);
+    console.log(`\nOK: ${inseridos.length} aluno(s) inserido(s) com sucesso.`);
   } catch (erro) {
-    console.error(`\n✖ ${erro.message}`);
+    console.error(`\nERRO: ${erro.message}`);
     process.exitCode = 1;
   }
 }

@@ -40,14 +40,15 @@ async function perguntarComPadrao(rotulo, padrao) {
 
 function imprimirCabecalho(configuracao) {
   console.clear?.();
+  console.log('');
   console.log(LINHA);
   console.log('  CRUD ALUNOS — Firebase Cloud Firestore');
   console.log(LINHA);
 
   if (configuracao.ok) {
-    console.log(`  ✔ ${configuracao.mensagem}`);
+    console.log(`  OK: ${configuracao.mensagem}`);
   } else {
-    console.log('  ✖ Firebase não configurado.');
+    console.log('  ERRO: Firebase não configurado.');
     console.log(configuracao.mensagem);
     console.log('  (o menu abre, mas as operações vão falhar até configurar)');
   }
@@ -72,7 +73,7 @@ async function acaoCadastrar() {
 
   const aluno = await alunosService.cadastrarAluno({ nome, turma, dataNascimento, ativo });
 
-  console.log('\n  ✔ Aluno cadastrado com sucesso!');
+  console.log('\n  OK: aluno cadastrado com sucesso!');
   imprimirAluno(aluno);
 }
 
@@ -86,7 +87,7 @@ async function acaoBuscarPorId() {
   const aluno = await alunosService.buscarAlunoPorId(id);
 
   if (!aluno) {
-    console.log(`  ✖ Nenhum aluno encontrado com o ID "${id}".`);
+    console.log(`  ERRO: Nenhum aluno encontrado com o ID "${id}".`);
     return;
   }
 
@@ -99,7 +100,7 @@ async function acaoAtualizar() {
   const atual = await alunosService.buscarAlunoPorId(id);
 
   if (!atual) {
-    console.log(`  ✖ Nenhum aluno encontrado com o ID "${id}".`);
+    console.log(`  ERRO: Nenhum aluno encontrado com o ID "${id}".`);
     return;
   }
 
@@ -125,7 +126,7 @@ async function acaoAtualizar() {
 
   const atualizado = await alunosService.atualizarAluno(atual.id, dados);
 
-  console.log('\n  ✔ Aluno atualizado com sucesso!');
+  console.log('\n  OK: aluno atualizado com sucesso!');
   imprimirAluno(atualizado);
 }
 
@@ -134,7 +135,7 @@ async function acaoExcluir() {
   const aluno = await alunosService.buscarAlunoPorId(id);
 
   if (!aluno) {
-    console.log(`  ✖ Nenhum aluno encontrado com o ID "${id}".`);
+    console.log(`  ERRO: Nenhum aluno encontrado com o ID "${id}".`);
     return;
   }
 
@@ -148,7 +149,7 @@ async function acaoExcluir() {
   }
 
   const removido = await alunosService.excluirAluno(aluno.id);
-  console.log(`\n  ✔ Aluno "${removido.nome}" (ID ${removido.id}) excluído com sucesso.`);
+  console.log(`\n  OK: aluno "${removido.nome}" (ID ${removido.id}) excluído com sucesso.`);
 }
 
 async function acaoPorTurma() {
@@ -187,7 +188,7 @@ async function acaoPopularDados() {
     console.log(`  + ${aluno.nome} (${aluno.turma}) -> ${aluno.id}`);
   });
 
-  console.log(`\n  ✔ ${inseridos.length} aluno(s) fictício(s) inserido(s).`);
+  console.log(`\n  OK: ${inseridos.length} aluno(s) fictício(s) inserido(s).`);
 }
 
 const ACOES = {
@@ -223,7 +224,7 @@ async function iniciarMenu(configuracao = { ok: true, mensagem: '' }) {
 
       const acao = ACOES[opcao];
       if (!acao) {
-        console.log(`\n  ✖ Opção inválida: "${opcao}".`);
+        console.log(`\n  ERRO: Opção inválida: "${opcao}".`);
         await perguntar('  Pressione Enter para continuar...');
         continue;
       }
@@ -231,13 +232,13 @@ async function iniciarMenu(configuracao = { ok: true, mensagem: '' }) {
       try {
         await acao();
       } catch (erro) {
-        console.log(`\n  ✖ ${erro.message}`);
+        console.log(`\n  ERRO: ${erro.message}`);
       }
 
       await perguntar('\n  Pressione Enter para voltar ao menu...');
     }
 
-    console.log('\n  Até logo! 👋\n');
+    console.log('\n  Até logo!\n');
   } finally {
     terminal.close();
     terminal = null;
